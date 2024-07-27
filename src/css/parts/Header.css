@@ -1,0 +1,20 @@
+.header {
+  width: auto;
+  height: 137px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-text {
+  font-size: 78px;
+  color: #5F6368;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    height: 137px;
+  }
+  .header-text {
+    font-size: 58px;
+  }
+}

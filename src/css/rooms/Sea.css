@@ -1,0 +1,11 @@
+.sea-container {
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  z-index: 1;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+}

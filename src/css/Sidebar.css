@@ -1,0 +1,158 @@
+.sidebar-container {
+  left: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s;
+}
+.sidebar-content {
+  max-width: 435px;
+  width: 435px;
+  height: 100vh;
+  background: #2B2C3E;
+  border-right: 3px solid #C4C5D3;
+  display: flex; 
+  flex-direction: column;
+}
+
+.sidebar-tab {
+  width: 100px;
+  height: 100vh;
+  background: #2B2C3E;
+  display: flex; 
+  flex-direction: column;
+}
+
+.coooms-header-container {
+  text-align: center;
+}
+
+.coooms-icon-container {
+  padding: 10px 25px;
+}
+
+.coooms-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+.header-title {
+  font-size: 76px;
+  color: #C4C5D3;
+}
+
+.user-container {
+  width: 100%;
+  padding-left: 25px;
+  display: flex;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+.user-container > p {
+  font-size: 63px;
+  color: #C4C5D3;
+}
+
+.room-linear {
+  width: 100px;
+  margin-top: 40px;
+  border: none;
+  border-top: 3px solid #C4C5D3;
+}
+
+
+.icon-wrap {
+  width: 100px;
+  box-sizing: border-box;
+  padding: 40px 25px;
+  display:flex;
+  flex-flow: column;
+}
+
+.icon-item {
+  margin-bottom: 70px;
+  display:flex;
+  cursor: pointer;
+}
+
+.icon-item > img {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-item > p {
+  font-size: 63px;
+  color: #C4C5D3;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.back-icon {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar-content {
+    max-width: 500px;
+  }
+  .header-title{
+    font-size: 66px;
+  }
+  .coooms-icon-container {
+    padding: 10px 20px;
+  }
+  .coooms-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
+  }
+
+  .user-container {
+    padding-left: 20px;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .room-linear {
+    width: 70px;
+  }
+
+  .icon-wrap {
+    width: 70px;
+    padding: 40px 20px;
+  }
+
+  .icon-item {
+    margin-bottom: 50px;
+  }
+
+  .icon-item > img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar-tab {
+    width: 70px;
+  }
+
+  .back-icon{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 30px 0 0 40px;
+  }
+}

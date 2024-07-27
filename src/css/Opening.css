@@ -1,0 +1,38 @@
+.opening-icon-container {
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opening-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2B2C3E;
+}
+
+.opening-title-text{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.opening-title {
+  font-size: 100px;
+  font-family: 'Lalezar';
+  color: #C4C5D3;
+}
+
+@media screen and (max-width: 500px) {
+  .opening-title {
+    font-size: 60px;
+  }
+  .opening-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
