@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function GetRooms() {
-  const base_uri = 'http://localhost:8080/rooms';
+  const base_uri = 'https://api.coooms.com/rooms';
   try {
     const response = await axios.get(base_uri);
     return response.data;

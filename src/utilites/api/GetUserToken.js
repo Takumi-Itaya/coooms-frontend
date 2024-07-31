@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function GetUserToken(email, password) {
-  const base_uri = 'http://localhost:8080/login';
+  const base_uri = 'https://api.coooms.com/login';
 
   const user_info = {
     email : email,

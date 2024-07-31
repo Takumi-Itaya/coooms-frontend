@@ -1,7 +1,7 @@
 import axios from "axios";
 
 async function GetUserInfo(email, authToken) {
-  const base_uri = 'http://localhost:8080/user';
+  const base_uri = 'https://api.coooms.com/user';
 
   const params = {
     email: email
