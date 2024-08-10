@@ -1,21 +1,25 @@
 import axios from "axios";
 
-async function UpdateUser(id, email, password, total_time) {
-  const base_uri = 'https://api.coooms.com/user';
+async function UpdateUser(userInfo, jwtToken) {
+  const base_uri = 'https://api.coooms.com/user'; //本番環境
+  // const base_uri = 'http://localhost:8080/user';　//開発環境
 
-  const params = {
-    id: id
+  const headers = {
+    'Content-Type': 'application/json',
+    'X-AUTH-TOKEN': 'Bearer ' + jwtToken
   }
 
   const user_info = {
-    id: id,
-    email : email,
-    password : password,
-    total_time : total_time
+    id: userInfo.id,
+    email : userInfo.email,
+    password : userInfo.password,
+    total_time : userInfo.total_time
   };
 
   try {
-    await axios.put(base_uri + "?id=" + id, user_info);
+    await axios.put(base_uri, user_info, {
+      headers : headers,
+    });
   } catch (error) {
     throw error;
   }

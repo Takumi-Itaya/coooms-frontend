@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Time from "./components/Time";
@@ -10,6 +11,8 @@ import { useEffect, useState } from "react";
 import GetRooms from "./utilites/api/GetRooms";
 import Opening from "./components/Opening";
 import PageLoding from "./components/PageLoding";
+import GetJWTToken from './utilites/api/GetJWTToken';
+import GetUserInfo from './utilites/api/GetUserInfo';
 
 function App() {
   const location = useLocation();

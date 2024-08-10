@@ -1,7 +1,8 @@
 import axios from "axios";
 
-async function GetUserToken(email, password) {
-  const base_uri = 'https://api.coooms.com/login';
+async function GetJWTToken(email, password) {
+  const base_uri = 'https://api.coooms.com/login'; //本番環境
+  // const base_uri = 'http://localhost:8080/login';　//開発環境
 
   const user_info = {
     email : email,
@@ -15,4 +16,4 @@ async function GetUserToken(email, password) {
     throw error;
   }
 }
-export default GetUserToken;
+export default GetJWTToken;

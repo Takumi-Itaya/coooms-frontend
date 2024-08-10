@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import '../css/Sidebar.css';
 import {  useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,15 +7,14 @@ import Footer from './parts/Footer';
 import LoginForm from './parts/LoginForm';
 import SigninForm from './parts/SigninForm';
 import UserHome from './parts/UserHome';
-import UpdateUser from '../utilites/api/UpdateUser';
-import GetUserToken from '../utilites/api/GetUserToken';
 import { useWindowDimensions } from './hooks/useWindowDimensions';
+import GetUserInfo from '../utilites/api/GetUserInfo';
+import UpdateUser from '../utilites/api/UpdateUser';
 
 function Sidebar(props) {
   const {width, height} = useWindowDimensions();
   const [menuActive, setMenuActive] = useState(false);
   const [left, setLeft] = useState(width < 500 ? -(width+3) + "px": "-438px");
-  const [authToken, setAuthToken] = useState('');
   const [invisibleSideberTime, setInvisibleSideberTime] = useState(0);
   
   const [isLogin, setLogin] = useState(false);
@@ -50,8 +50,24 @@ function Sidebar(props) {
     handleLoginActive: handleLoginActive, 
     handleIsLogin: handleIsLogin, 
     setUserInfo: props.setUserInfo,
-    setAuthToken: setAuthToken
   }
+
+  //ユーザーログイン自動化
+  useEffect(() => {
+    let jwtToken = Cookies.get('token');
+    if(jwtToken) {
+      GetUserInfo(jwtToken).then(user_info => {
+        if(Number(Cookies.get('uncalculatedTime')) > 0) {
+          user_info.total_time += Number(Cookies.get('uncalculatedTime'));
+          UpdateUser(user_info, jwtToken);
+          Cookies.set('uncalculatedTime', 0);
+        }
+        props.setUserInfo(user_info);
+        handleIsLogin(true);
+      }).catch((error) => {
+      })
+    }
+  }, [])
 
   //total_time
   const [count, setCount] = useState(0);

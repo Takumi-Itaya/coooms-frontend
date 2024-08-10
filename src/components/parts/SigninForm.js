@@ -1,7 +1,8 @@
+import Cookies from 'js-cookie';
 import { useState } from 'react';
 import '../../css/parts/SigninForm.css';
 import CreateUser from '../../utilites/api/CreateUser';
-import GetUserToken from '../../utilites/api/GetUserToken';
+import GetJWTToken from '../../utilites/api/GetJWTToken';
 import GetUserInfo from '../../utilites/api/GetUserInfo';
 
 function SigninForm(props) {
@@ -23,9 +24,11 @@ function SigninForm(props) {
       return;
     }
     CreateUser(email, password).then(() => {
-      GetUserToken(email, password).then(auth_token => {
-        if(auth_token !== undefined) {
-          GetUserInfo(email, auth_token).then(user_info => {
+      GetJWTToken(email, password).then(jwt_token => {
+        if(jwt_token !== undefined) {
+          //本番環境ではCookieにdomainを指定する
+          Cookies.set('token', jwt_token, { expires: 1, path: '/', domain: 'coooms.com', secure: true })
+          GetUserInfo(jwt_token).then(user_info => {
             props.setUserInfo(user_info);
             props.handleIsLogin(true);
             setError('hidden');

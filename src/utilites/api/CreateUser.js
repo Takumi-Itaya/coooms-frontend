@@ -1,7 +1,8 @@
 import axios from "axios";
 
 async function CreateUser(email, password) {
-  const base_uri = 'https://api.coooms.com/user';
+  const base_uri = 'https://api.coooms.com/user'; //本番環境
+  // const base_uri = 'http://localhost:8080/user';　//開発環境
 
   const user_info = {
     email : email,

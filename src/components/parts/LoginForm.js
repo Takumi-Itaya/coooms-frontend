@@ -1,7 +1,9 @@
+import Cookies from 'js-cookie';
 import { useState } from 'react';
 import '../../css/parts/LoginForm.css';
 import GetUserInfo from '../../utilites/api/GetUserInfo';
-import GetUserToken from '../../utilites/api/GetUserToken';
+import GetJWTToken from '../../utilites/api/GetJWTToken';
+import UpdateUser from '../../utilites/api/UpdateUser';
 
 function LoginForm(props) {
 
@@ -11,13 +13,21 @@ function LoginForm(props) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handlerequestLogin = () => {
-    GetUserToken(email, password).then(auth_token => {
-      if(auth_token !== undefined) {
-        props.setAuthToken(auth_token);
-        GetUserInfo(email, auth_token).then(user_info => {
+    GetJWTToken(email, password).then(jwtToken => {
+      if(jwtToken !== undefined) {
+        //本番環境ではCookieにdomainを指定する
+        Cookies.set('token', jwtToken, { expires: 1, path: '/', domain: 'coooms.com', secure: true })
+        GetUserInfo(jwtToken).then(user_info => {
+          if(Number(Cookies.get('uncalculatedTime')) > 0) {
+            user_info.total_time += Number(Cookies.get('uncalculatedTime'));
+            UpdateUser(user_info, jwtToken);
+            Cookies.set('uncalculatedTime', 0);
+          }
           props.setUserInfo(user_info);
           props.handleIsLogin(true);
           setError('hidden');
+
+
         })
       } else {
         

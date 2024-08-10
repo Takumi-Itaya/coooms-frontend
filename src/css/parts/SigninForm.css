@@ -84,7 +84,7 @@
     scrollbar-width: none;
   }
    /*Google Chrome、Safariへの対応*/
-   .contents_box::-webkit-scrollbar{
+   .signin-form-container::-webkit-scrollbar{
     display: none;
   }
   .signin-text {

@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import '../../css/parts/UserHome.css';
 import UpdateUser from '../../utilites/api/UpdateUser';
 
@@ -13,7 +14,9 @@ function UserHome(props) {
   const handleLogout = () => {
     props.setUserInfo('');
     props.handleIsLogin(false);
-    UpdateUser(props.userInfo.id, props.userInfo.email, props.userInfo.password, props.userInfo.total_time);
+    let jwtToken = Cookies.get('token');
+    UpdateUser(props.userInfo, jwtToken);
+    Cookies.remove('token');
   }
 
   return(
