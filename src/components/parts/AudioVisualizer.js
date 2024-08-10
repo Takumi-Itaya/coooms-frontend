@@ -55,6 +55,7 @@ function AudioVisualizer(props) {
     }
 
     renderVisualizer()
+    audioCtx.current.suspend();
 
     return () => {
       audioStop();
@@ -74,6 +75,7 @@ function AudioVisualizer(props) {
 
 
   const audioStart = (index) => {
+    if(audioCtx.current.state === 'suspended') audioCtx.current.resume();
     audioList.current[index].play();
     setPlaying(true);
 

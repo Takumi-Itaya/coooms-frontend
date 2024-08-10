@@ -15,7 +15,7 @@ function LoginForm(props) {
   const handlerequestLogin = () => {
     GetJWTToken(email, password).then(jwtToken => {
       if(jwtToken !== undefined) {
-        //本番環境ではCookieにdomainを指定する
+        //本番環境ではCookieにdomainを指定する domain: 'coooms.com',
         Cookies.set('token', jwtToken, { expires: 1, path: '/', domain: 'coooms.com', secure: true })
         GetUserInfo(jwtToken).then(user_info => {
           if(Number(Cookies.get('uncalculatedTime')) > 0) {
