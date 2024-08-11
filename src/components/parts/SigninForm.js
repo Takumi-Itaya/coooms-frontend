@@ -24,11 +24,14 @@ function SigninForm(props) {
       return;
     }
     CreateUser(email, password).then(() => {
-      GetJWTToken(email, password).then(jwt_token => {
-        if(jwt_token !== undefined) {
-          //本番環境ではCookieにdomainを指定する
-          Cookies.set('token', jwt_token, { expires: 1, path: '/', domain: 'coooms.com', secure: true })
-          GetUserInfo(jwt_token).then(user_info => {
+      GetJWTToken(email, password).then(jwtToken => {
+        if(jwtToken !== undefined) {
+          Cookies.set('token', jwtToken, { 
+            expires: 1, 
+            path: '/', 
+            domain: process.env.REACT_APP_COOKIE_DOMAIN, 
+            secure: process.env.REACT_APP_COOKIE_SECURE })
+          GetUserInfo(jwtToken).then(user_info => {
             props.setUserInfo(user_info);
             props.handleIsLogin(true);
             setError('hidden');

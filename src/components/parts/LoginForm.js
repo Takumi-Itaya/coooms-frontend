@@ -15,8 +15,11 @@ function LoginForm(props) {
   const handlerequestLogin = () => {
     GetJWTToken(email, password).then(jwtToken => {
       if(jwtToken !== undefined) {
-        //本番環境ではCookieにdomainを指定する domain: 'coooms.com',
-        Cookies.set('token', jwtToken, { expires: 1, path: '/', domain: 'coooms.com', secure: true })
+        Cookies.set('token', jwtToken, { 
+          expires: 1, 
+          path: '/', 
+          domain: process.env.REACT_APP_COOKIE_DOMAIN, 
+          secure: process.env.REACT_APP_COOKIE_SECURE })
         GetUserInfo(jwtToken).then(user_info => {
           if(Number(Cookies.get('uncalculatedTime')) > 0) {
             user_info.total_time += Number(Cookies.get('uncalculatedTime'));

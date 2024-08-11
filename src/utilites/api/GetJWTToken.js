@@ -1,8 +1,7 @@
 import axios from "axios";
 
 async function GetJWTToken(email, password) {
-  const base_uri = 'https://api.coooms.com/login'; //本番環境
-  // const base_uri = 'http://localhost:8080/login';　//開発環境
+  const base_uri = process.env.REACT_APP_BASE_URL_LOGIN;
 
   const user_info = {
     email : email,

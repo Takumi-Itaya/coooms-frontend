@@ -1,8 +1,7 @@
 import axios from "axios";
 
 async function UpdateUser(userInfo, jwtToken) {
-  const base_uri = 'https://api.coooms.com/user'; //本番環境
-  // const base_uri = 'http://localhost:8080/user';　//開発環境
+  const base_uri = process.env.REACT_APP_BASE_URL_USER;
 
   const headers = {
     'Content-Type': 'application/json',

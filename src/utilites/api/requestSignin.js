@@ -1,5 +1,4 @@
 import requestLogin from "./requestLogin";
-import GetUserInfo from "./GetUserInfo";
 import CreateUser from "./CreateUser";
 
 async function requestSignin(email, password) {
