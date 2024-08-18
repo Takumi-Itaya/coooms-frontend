@@ -1,18 +1,15 @@
-import Cookies from 'js-cookie';
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Time from "./components/Time";
-import { AnimatePresence } from "framer-motion";
-import Forest from "./components/rooms/Forest";
-import Rain from "./components/rooms/Rain";
-import Sea from "./components/rooms/Sea";
-import Classic from "./components/rooms/Classic";
 import { useEffect, useState } from "react";
-import GetRooms from "./utilites/api/GetRooms";
-import Opening from "./components/Opening";
-import PageLoding from "./components/PageLoding";
-import GetJWTToken from './utilites/api/GetJWTToken';
-import GetUserInfo from './utilites/api/GetUserInfo';
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import Sidebar from "components/Sidebar";
+import Time from "components/Time";
+import { AnimatePresence } from "framer-motion";
+import Forest from "components/rooms/Forest";
+import Rain from "components/rooms/Rain";
+import Sea from "components/rooms/Sea";
+import Classic from "components/rooms/Classic";
+import GetRooms from "utilites/api/GetRooms";
+import Opening from "components/Opening";
+import PageLoding from "components/PageLoding";
 
 function App() {
   const location = useLocation();

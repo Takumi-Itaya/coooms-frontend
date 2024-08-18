@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie';
 import { useState } from 'react';
-import '../../css/parts/LoginForm.css';
-import GetUserInfo from '../../utilites/api/GetUserInfo';
-import GetJWTToken from '../../utilites/api/GetJWTToken';
-import UpdateUser from '../../utilites/api/UpdateUser';
+import 'css/parts/LoginForm.css';
+import GetUserInfo from 'utilites/api/GetUserInfo';
+import GetJWTToken from 'utilites/api/GetJWTToken';
+import UpdateUser from 'utilites/api/UpdateUser';
 
 function LoginForm(props) {
 

@@ -1,7 +1,7 @@
-import '../../css/rooms/Forest.css';
-import PageLoding from '../PageLoding';
-import AudioVisualizer from '../parts/AudioVisualizer';
-import BackgroundBlack from '../parts/BackgroudBlack';
+import 'css/rooms/Forest.css';
+import PageLoding from 'components/PageLoding';
+import AudioVisualizer from 'components/parts/AudioVisualizer';
+import BackgroundBlack from 'components/parts/BackgroudBlack';
 
 function Forest(props) {
   const imageSrc = "./img/background/forest_bg.jpg";

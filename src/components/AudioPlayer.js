@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import '../css/AudioPlayer.css';
-import AudioVisualizer from "./parts/AudioVisualizer";
+import 'css/AudioPlayer.css';
 
 function AudioPlayer(props) {
   const [sourceIndex, setSourceIndex] = useState(0);

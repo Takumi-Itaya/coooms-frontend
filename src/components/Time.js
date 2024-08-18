@@ -1,4 +1,4 @@
-import '../css/Time.css';
+import 'css/Time.css';
 import { useEffect, useState } from "react";
 
 function Time() {

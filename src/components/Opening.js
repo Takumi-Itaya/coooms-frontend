@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import '../css/Opening.css';
-import { useWindowDimensions } from './hooks/useWindowDimensions';
+import 'css/Opening.css';
+import { useWindowDimensions } from 'components/hooks/useWindowDimensions';
 
 function Opening() {
   const {width, height} = useWindowDimensions();

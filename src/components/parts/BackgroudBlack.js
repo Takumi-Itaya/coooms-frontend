@@ -1,4 +1,4 @@
-import '../../css/parts/BackgroundBlack.css';
+import 'css/parts/BackgroundBlack.css';
 
 function BackgroundBlack() {
   return(

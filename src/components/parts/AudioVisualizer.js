@@ -1,10 +1,10 @@
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
-import '../../css/parts/AudioVisualizer.css';
-import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import UpdateUser from "../../utilites/api/UpdateUser";
-import { timer } from "../../utilites/time/timer";
+import 'css/parts/AudioVisualizer.css';
+import { useWindowDimensions } from "components/hooks/useWindowDimensions";
+import { timer } from "utilites/time/timer";
+import UpdateUser from "utilites/api/UpdateUser";
 
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;

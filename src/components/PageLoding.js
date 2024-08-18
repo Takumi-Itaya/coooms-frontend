@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { UpAnim, DownAnim } from './anim_variants/PageTransitionAnim';
-import '../css/rooms/Forest.css';
+import { UpAnim, DownAnim } from 'components/anim_variants/PageTransitionAnim';
+import 'css/rooms/Forest.css';
 
 function PageLoding() {
   return(

@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie';
 import { useState } from 'react';
-import '../../css/parts/SigninForm.css';
-import CreateUser from '../../utilites/api/CreateUser';
-import GetJWTToken from '../../utilites/api/GetJWTToken';
-import GetUserInfo from '../../utilites/api/GetUserInfo';
+import 'css/parts/SigninForm.css';
+import CreateUser from 'utilites/api/CreateUser';
+import GetJWTToken from 'utilites/api/GetJWTToken';
+import GetUserInfo from 'utilites/api/GetUserInfo';
 
 function SigninForm(props) {
 

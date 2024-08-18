@@ -1,15 +1,15 @@
 import Cookies from 'js-cookie';
-import '../css/Sidebar.css';
-import {  useEffect, useRef, useState } from "react";
+import 'css/Sidebar.css';
+import {  useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
-import Footer from './parts/Footer';
-import LoginForm from './parts/LoginForm';
-import SigninForm from './parts/SigninForm';
-import UserHome from './parts/UserHome';
-import { useWindowDimensions } from './hooks/useWindowDimensions';
-import GetUserInfo from '../utilites/api/GetUserInfo';
-import UpdateUser from '../utilites/api/UpdateUser';
+import Footer from 'components/parts/Footer';
+import LoginForm from 'components/parts/LoginForm';
+import SigninForm from 'components/parts/SigninForm';
+import UserHome from 'components/parts/UserHome';
+import { useWindowDimensions } from 'components/hooks/useWindowDimensions';
+import GetUserInfo from 'utilites/api/GetUserInfo';
+import UpdateUser from 'utilites/api/UpdateUser';
 
 function Sidebar(props) {
   const {width, height} = useWindowDimensions();

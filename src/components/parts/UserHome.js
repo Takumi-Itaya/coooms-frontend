@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
-import '../../css/parts/UserHome.css';
-import UpdateUser from '../../utilites/api/UpdateUser';
+import 'css/parts/UserHome.css';
+import UpdateUser from 'utilites/api/UpdateUser';
 
 function UserHome(props) {
 
