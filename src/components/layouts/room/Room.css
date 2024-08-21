@@ -1,0 +1,13 @@
+.room-bg-container {
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  z-index: 1;
+  background-color:black;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
