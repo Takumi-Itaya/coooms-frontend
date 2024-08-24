@@ -2,8 +2,14 @@
 
 # Coooms
 
-[![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=React&logoColor=61DAFB)](https://react.dev/blog/2022/03/29/react-v18#whats-new-in-react-18)
-[![Thanks](https://img.shields.io/badge/Thank%20you-for%20visiting-00aab9)](https://www.hayabusatrip.com)
+[![HTML](https://img.shields.io/badge/HTML-gray?style=flat&logo=html5)](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/HTML_basics)
+[![CSS](https://img.shields.io/badge/CSS-gray?style=flat&logo=css3&logoColor=%231572B6)](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/CSS_basics)
+[![Java](https://img.shields.io/badge/Java-gray?style=flat)](https://www.java.com/ja/)
+[![Spring](https://img.shields.io/badge/Spring-gray?style=flat&logo=spring)](https://spring.io/)
+[![Javascript](https://img.shields.io/badge/Javascript-gray?style=flat&logo=javascript)](https://developer.mozilla.org/ja/docs/Web/JavaScript)
+[![React](https://img.shields.io/badge/React-gray?style=flat&logo=React)](https://ja.react.dev/)
+[![Amazon AWS](https://img.shields.io/badge/Amazon_AWS-gray?style=flat&logo=amazonwebservices)](https://aws.amazon.com/jp/what-is-aws/)
+[![Thanks](https://img.shields.io/badge/Thank%20you-for%20visiting-00aab9)](https://coooms.com/)
 
 ## 概要
 
@@ -12,13 +18,15 @@
 ## サービス URL
 
 [https://coooms.com/](https://coooms.com/)  
-ゲストアカウントは以下のアカウントをご利用ください。  
+ゲストログインは以下のアカウントをご利用ください。  
 E メール: guest@email.com  
 パスワード: Guest000/
 
-## 使用している技術スタック
+## 使用技術
 
-HTML, CSS, JavaScript, React
+**フロントエンド:** HTML / CSS / JavaScript / React  
+**バックエンド** Java / Spring  
+**インフラ** AWS(Route53 / Certificate Manager / ALB / VPC / EC2 / / RDS MySQL / S3) / Nginx
 
 ## なぜ作ろうと思ったのか
 
@@ -32,7 +40,3 @@ HTML, CSS, JavaScript, React
 
 複数の BGM をループしながら再生する機能の実装するときに音声がならなかったり複数の音声が混ざったりするというバグが発生しました。
 私はこういうエラーが出ないバグが発生したときの大体の原因が使っている技術の理解の浅さだと思います。なので今回でしたら React のコンポーネントの動きや new Audio の使い方などをもう一度勉強しなおすこで解決しました。
-
-## 工数
-
-4 ヶ月
