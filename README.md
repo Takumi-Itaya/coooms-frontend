@@ -1,16 +1,28 @@
+こちらは「Coooms」のフロントエンドのリポジトリになります。バックエンドのリポジトリは[こちら](https://github.com/Takumi-Itaya/coooms-backend)です。
+
 # Coooms
 
-## なぜ作ろうと思ったのか
+[![React](https://img.shields.io/badge/React-v18.2.0-61DAFB?logo=React&logoColor=61DAFB)](https://react.dev/blog/2022/03/29/react-v18#whats-new-in-react-18)
+[![Thanks](https://img.shields.io/badge/Thank%20you-for%20visiting-00aab9)](https://www.hayabusatrip.com)
 
-私は勉強をするとき youtube で作業用 BGM を聞いて勉強するのですが、youtube だとおすすめの動画や広告などで集中力が切れることがよくありました。そこでできる限り集中力を落とさずシンプルに BGM だけ聞けるサービスがあればいいのにという思いがあり Coooms と言うサービスを開発しました。
+## 概要
+
+現在は自然音、雨音、波音、しゃろう BGM の 4 種類の BGM を再生できます。ログインすると勉強時間の合計が見れるようになります。
+
+## サービス URL
+
+[https://coooms.com/](https://coooms.com/)  
+ゲストアカウントは以下のアカウントをご利用ください。  
+E メール: guest@email.com  
+パスワード: Guest000/
 
 ## 使用している技術スタック
 
 HTML, CSS, JavaScript, React
 
-## 概要
+## なぜ作ろうと思ったのか
 
-現在は自然音、雨音、波音、しゃろう BGM の 4 種類の BGM を再生できます。ログインすると勉強時間の合計が見れるようになります。
+私は勉強をするとき youtube で作業用 BGM を聞いて勉強するのですが、youtube だとおすすめの動画や広告などで集中力が切れることがよくありました。そこでできる限り集中力を落とさずシンプルに BGM だけ聞けるサービスがあればいいのにという思いがあり Coooms と言うサービスを開発しました。
 
 ## 工夫した点
 
@@ -24,14 +36,3 @@ HTML, CSS, JavaScript, React
 ## 工数
 
 4 ヶ月
-
-## サービス URL
-
-[https://coooms.com/](https://coooms.com/)  
-ゲストアカウント  
-E メール: guest@email.com  
-パスワード: Guest000/
-
-## バックエンドのソースコード
-
-[https://github.com/Takumi-Itaya/CooomsAPI](https://github.com/Takumi-Itaya/CooomsAPI)
