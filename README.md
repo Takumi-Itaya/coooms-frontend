@@ -2,6 +2,7 @@
 
 # Coooms
 
+![service-image](https://github.com/Takumi-Itaya/coooms-frontend/blob/main/public/images/coooms-main-image.png)
 [![HTML](https://img.shields.io/badge/HTML-gray?style=flat&logo=html5)](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/HTML_basics)
 [![CSS](https://img.shields.io/badge/CSS-gray?style=flat&logo=css3&logoColor=%231572B6)](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/CSS_basics)
 [![Java](https://img.shields.io/badge/Java-gray?style=flat)](https://www.java.com/ja/)
@@ -27,6 +28,14 @@ E メール: guest@email.com
 **フロントエンド:** HTML / CSS / JavaScript / React  
 **バックエンド** Java / Spring  
 **インフラ** AWS(Route53 / Certificate Manager / ALB / VPC / EC2 / / RDS MySQL / S3) / Nginx
+
+## インフラ構成図
+
+![infrastructure-diagram](https://github.com/Takumi-Itaya/coooms-frontend/blob/main/public/images/diagrams/aws-config.drawio.png)
+
+## ER 図
+
+![er-diagram](https://github.com/Takumi-Itaya/coooms-frontend/blob/main/public/images/diagrams/coooms-er-diagram.drawio.png)
 
 ## なぜ作ろうと思ったのか
 
