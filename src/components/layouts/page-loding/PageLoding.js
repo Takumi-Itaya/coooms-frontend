@@ -25,7 +25,7 @@ function PageLoding() {
         style={{
           position: 'absolute', 
           zIndex: 50,
-          overflowY: 'hidden',
+          // overflowY: 'hidden',
           width: '100vw',
           height: '50vh',
           background: '#2B2C3E',

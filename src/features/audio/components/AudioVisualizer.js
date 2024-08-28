@@ -227,8 +227,6 @@ function AudioVisualizer(props) {
     if(props.userInfo) {
       props.userInfo.total_time += timerRef.current.count;
       let jwtToken = Cookies.get('token');
-      //期限切れ検証用
-      // let jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJUQUtVTUlJVEFZQSIsInN1YiI6IkNvb29tc0FQSSIsImF1ZCI6ImZmZkBlbWFpbC5jb20iLCJpYXQiOjE3MjMwMDQ2OTksIm5iZiI6MTcyMzAwNDY5OSwiZXhwIjoxNzIzMDE1NDk5fQ.ZZvzMudGAingqnt2VL3kfwGKCLL5n4639LbaSqXiLVY';
       UpdateUser(props.userInfo, jwtToken).catch((error) => {
         let uncalculatedTime = Number(Cookies.get('uncalculatedTime')) || 0;
         console.log(uncalculatedTime + timerRef.current.count);
