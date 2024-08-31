@@ -12,10 +12,6 @@ import play from 'assets/icon/play.png';
 import stop from 'assets/icon/stop.png';
 
 
-
-
-
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
 function AudioVisualizer(props) {
   const [sourceIndex, setSourceIndex] = useState(0);
   const [volume, setVolume] = useState(0.2);
@@ -26,7 +22,7 @@ function AudioVisualizer(props) {
   const [tapCount, setTapCount] = useState(0);
 
   //オーディオ関連
-  const audioCtx = useRef(new AudioContext());
+  const audioCtx = useRef(new (window.AudioContext || window.webkitAudioContext)());
   const trackList = useRef([]);
   const audioList = useRef([]);
   const analyser = useRef(audioCtx.current.createAnalyser());
@@ -83,19 +79,19 @@ function AudioVisualizer(props) {
 
 
   const audioStart = (index) => {
-    if(audioCtx.current.state === 'suspended') audioCtx.current.resume();
+    if(audioCtx.current.state === 'suspended') audioCtx.current.resume()
     audioList.current[index].play();
     setPlaying(true);
 
     renderVisualizer();
 
-    countStart()
+    countStart();
   }
 
   const audioStop = () => {
     audioList.current[sourceIndex].pause();
     setPlaying(false);
-
+        
     countStop();
   }
 
@@ -113,7 +109,6 @@ function AudioVisualizer(props) {
     const canvasHeight = canvas.height;
     const bufferLength = analyser.current.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
-
 
     function renderCircleFrame() {
       requestAnimationFrame(renderCircleFrame);

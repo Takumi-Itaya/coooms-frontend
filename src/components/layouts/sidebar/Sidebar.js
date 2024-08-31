@@ -24,13 +24,11 @@ import arrowSmallLeft from 'assets/icon/arrow-small-left.png'
 
 
 function Sidebar(props) {
-  const {width, height} = useWindowDimensions();
+  const {width} = useWindowDimensions();
   const [menuActive, setMenuActive] = useState(false);
+  const [menuOver, setMenuOver] = useState(false);
   const [left, setLeft] = useState(width < 500 ? -(width+3) + "px": "-438px");
-  const [invisibleSideberTime, setInvisibleSideberTime] = useState(0);
-  
   const [isLogin, setLogin] = useState(false);
-  //ログインフォームかサインインフォーム
   const [loginActive, setLoginActive] = useState(true);
 
 
@@ -38,7 +36,6 @@ function Sidebar(props) {
     if(menuActive) {
       setMenuActive(false);
       width < 500 ? setLeft(-(width+3) + "px") : setLeft("-438px");
-      setInvisibleSideberTime(0);
     } else {
       setMenuActive(true);
       setLeft(0);
@@ -81,37 +78,38 @@ function Sidebar(props) {
     }
   }, [])
 
-  //total_time
-  const [count, setCount] = useState(0);
+  //サイドバー自動開閉制御
+  const [intervalId, setIntervalId] = useState(null);
   useEffect(() => {
-    const interval = setInterval(() => {
-        setCount(count + 1);
-        //5秒たったらサイドバーを見えなくする
-        if(invisibleSideberTime+1 <= 5 && !menuActive) {
-          setInvisibleSideberTime(invisibleSideberTime + 1);
-        }
-        if(invisibleSideberTime+1 === 5) {
+    if(menuActive) return;
+    if(menuOver) {
+      visibleSiderTub();
+      if(intervalId != null) clearInterval(intervalId);
+    } else {
+      var count = 0
+      var id = setInterval(() =>{
+        count++;
+        if(count === 5) {
           invisibleSiderTub();
         }
-    }, 1000);
-    return () => {
-      clearInterval(interval)
-    };
-  }, [count]);
+      }, 1000);
+      setIntervalId(id);
+    }
+  }, [menuOver])
 
   const invisibleSiderTub = () => {
-    menuActive ? setLeft(left) : width < 500 ? setLeft(-(width+3+70) + "px") : setLeft("-538px");;
+    width < 500 ? setLeft(-(width+3+70) + "px") : setLeft("-538px");;
   }
-
   const visibleSiderTub = () => {
-    menuActive ? setLeft(left) : width < 500 ? setLeft(-(width+3) + "px") : setLeft("-438px");;
-    setInvisibleSideberTime(0);
+    width < 500 ? setLeft(-(width+3) + "px") : setLeft("-438px");;
   }
 
 
   return (
     <>
-      <div className='sidebar-container' style={{ left: left}}>
+      <div className='sidebar-container' style={{ left: left}} 
+        onMouseOver={() => setMenuOver(true)}
+        onMouseLeave={() => setMenuOver(false)}>
         <div className='sidebar-content' style={{width: width}}>
           <div className='coooms-header-container'>
             <p className='header-title'>Coooms</p>
@@ -180,7 +178,7 @@ function Sidebar(props) {
             </div>
           </div>
         </div>
-        <div className='invisible-sideber-scope' style={{ width: '100px', height: '100vh'}} onMouseOver={visibleSiderTub}/>
+        <div className='invisible-sideber-scope' style={{ width: '100px', height: '100vh'}}/>
       </div>
 
     </>
