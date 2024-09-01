@@ -13,34 +13,32 @@ function LoginForm(props) {
   const [isError, setError] = useState('hidden');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handlerequestLogin = () => {
-    GetJWTToken(email, password).then(jwtToken => {
-      if(jwtToken !== undefined) {
-        Cookies.set('token', jwtToken, { 
-          expires: 1, 
-          path: '/', 
-          domain: COOKIE_DOMAIN, 
-          secure: COOKIE_SECURE, })
-        GetUserInfo(jwtToken).then(user_info => {
-          if(Number(Cookies.get('uncalculatedTime')) > 0) {
-            user_info.total_time += Number(Cookies.get('uncalculatedTime'));
-            UpdateUser(user_info, jwtToken);
-            Cookies.set('uncalculatedTime', 0);
-          }
-          props.setUserInfo(user_info);
-          props.handleIsLogin(true);
-          setError('hidden');
+  const handlerequestLogin = async () => {
+    try {
+      const jwtToken = await GetJWTToken(email, password);
 
+      Cookies.set('token', jwtToken, { 
+        expires: 1, 
+        path: '/', 
+        domain: COOKIE_DOMAIN, 
+        secure: COOKIE_SECURE, })
+      
+      const userInfo = await GetUserInfo(jwtToken);
 
-        })
-      } else {
-        
+      //トークンが期限切れで計算できなかった分の再計算
+      if(Number(Cookies.get('uncalculatedTime')) > 0) {
+        userInfo.total_time += Number(Cookies.get('uncalculatedTime'));
+        UpdateUser(userInfo, jwtToken);
+        Cookies.set('uncalculatedTime', 0);
       }
-    })
-    .catch(() => {
+
+      props.setUserInfo(userInfo);
+      props.handleIsLogin(true);
+      setError('hidden');
+    } catch {
       setError('visible');
       setErrorMessage('email or password is incorrect');
-    })
+    }
   }
 
   return(
@@ -58,10 +56,6 @@ function LoginForm(props) {
           <p className='form-text'>Password</p>
           <input type="text" className='form' value={password} onChange={(e) => setPassword(e.target.value)}/>
         </div>
-        {/* <div className='other-text-container'>
-          <hr className='linear'/>
-        </div>
-        <button className="google-button">Google Login</button> */}
         <div className='Login-button-container'>
           <p className='signin-link' onClick={() => props.handleLoginActive(false)}>sign in</p>
           <button className='login-button' onClick={handlerequestLogin}>Login</button>

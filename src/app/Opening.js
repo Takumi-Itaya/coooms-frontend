@@ -6,7 +6,7 @@ import doorClosed from 'assets/icon/door-closed.png'
 
 
 function Opening() {
-  const {width, height} = useWindowDimensions();
+  const {width} = useWindowDimensions();
   const words = "Coooms"
     const word = words.split("")
 

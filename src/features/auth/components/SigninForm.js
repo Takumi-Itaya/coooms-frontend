@@ -13,7 +13,7 @@ function SigninForm(props) {
   const [isError, setError] = useState('hidden');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleRequestSignin = () => {
+  const handleRequestSignin = async () => {
     if(!validateEmail(email)) {
       setError('visible');
       setErrorMessage('Please enter your email')
@@ -24,26 +24,27 @@ function SigninForm(props) {
       setErrorMessage('Please enter at least 8 uppercase letters, numbers and special characters')
       return;
     }
-    CreateUser(email, password).then(() => {
-      GetJWTToken(email, password).then(jwtToken => {
-        if(jwtToken !== undefined) {
-          Cookies.set('token', jwtToken, { 
-            expires: 1, 
-            path: '/', 
-            domain: COOKIE_DOMAIN, 
-            secure: COOKIE_SECURE })
-          GetUserInfo(jwtToken).then(user_info => {
-            props.setUserInfo(user_info);
-            props.handleIsLogin(true);
-            setError('hidden');
-          })
-        }
-      })
-    })
-    .catch(() => {
+
+    try {
+      await CreateUser(email, password);
+
+      const jwtToken = await GetJWTToken(email, password);
+
+      Cookies.set('token', jwtToken, { 
+        expires: 1, 
+        path: '/', 
+        domain: COOKIE_DOMAIN, 
+        secure: COOKIE_SECURE })
+
+      const userInfo = await GetUserInfo(jwtToken);
+
+      props.setUserInfo(userInfo);
+      props.handleIsLogin(true);
+      setError('hidden');
+    } catch {
       setError('visible');
       setErrorMessage('Could not create user');
-    })
+    }
   }
 
   function validateEmail(email) {

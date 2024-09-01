@@ -26,7 +26,7 @@ import arrowSmallLeft from 'assets/icon/arrow-small-left.png'
 function Sidebar(props) {
   const {width} = useWindowDimensions();
   const [menuActive, setMenuActive] = useState(false);
-  const [menuOver, setMenuOver] = useState(false);
+  const [menuOver, setMenuOver] = useState(true);
   const [left, setLeft] = useState(width < 500 ? -(width+3) + "px": "-438px");
   const [isLogin, setLogin] = useState(false);
   const [loginActive, setLoginActive] = useState(true);

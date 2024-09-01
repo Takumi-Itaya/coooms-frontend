@@ -222,7 +222,7 @@ function AudioVisualizer(props) {
     if(props.userInfo) {
       props.userInfo.total_time += timerRef.current.count;
       let jwtToken = Cookies.get('token');
-      UpdateUser(props.userInfo, jwtToken).catch((error) => {
+      UpdateUser(props.userInfo, jwtToken).catch(() => {
         let uncalculatedTime = Number(Cookies.get('uncalculatedTime')) || 0;
         console.log(uncalculatedTime + timerRef.current.count);
         Cookies.set('uncalculatedTime', uncalculatedTime + timerRef.current.count);

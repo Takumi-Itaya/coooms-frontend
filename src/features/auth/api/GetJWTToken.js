@@ -11,7 +11,8 @@ async function GetJWTToken(email, password) {
 
   try {
     const response = await axios.post(base_uri, user_info);
-    return response.headers['x-auth-token'];
+    const jwt_token =  response.headers['x-auth-token'];
+    return jwt_token;
   } catch (error) {
     throw error;
   }
