@@ -11,6 +11,7 @@ import forestBg from 'assets/background/forest_bg.jpg';
 import rainBg from 'assets/background/rain_bg.jpg';
 import seaBg from 'assets/background/sea_bg.jpg';
 import loFiBg from 'assets/background/lo-fi_bg.jpg';
+import PageLoding from "components/layouts/page-loding/PageLoding";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
         :
         <>
           <Sidebar {...userInfoProps}/>
+          <PageLoding />
           <Time />
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
