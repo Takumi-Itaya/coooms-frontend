@@ -9,16 +9,21 @@
 }
 
 .time {
-  font-size: 163px;
-  color: #C4C5D3;
+  font-size: 120px;
+  color: #F2EFE7;
+  text-shadow:
+    3px 3px 2px #48A6A7,
+    -3px 3px 2px #48A6A7,
+    -3px -3px 0 #48A6A7,
+    3px -3px 0 #48A6A7;
   text-align: center;
 }
 
 .count-time {
-  font-size: 64px;
-  color: #C4C5D3;
   text-align: center;
   margin-top: 200px;
+  font-size: 64px;
+  color: #C4C5D3;
 }
 
 @media screen and (max-width: 900px) {

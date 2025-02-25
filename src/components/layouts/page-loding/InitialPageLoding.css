@@ -1,0 +1,36 @@
+/* .pageloding-container {
+  position: absolute;
+} */
+
+.li-cloud1 {
+  width: 1103px;
+  height: 732px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.li-cloud2 {
+  width: 1331px;
+  height: 839px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+}
+.li-cloud3 {
+  width: 1203px;
+  height: 728px;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+}
+.li-cloud4 {
+  width: 1331px;
+  height: 845px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  bottom: 0;
+}

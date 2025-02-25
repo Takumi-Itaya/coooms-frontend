@@ -2,23 +2,14 @@ import Cookies from 'js-cookie';
 import './Sidebar.css';
 import {  useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
 import Footer from 'components/layouts/footer/Footer';
 import LoginForm from 'features/auth/components/LoginForm';
 import SigninForm from 'features/auth/components/SigninForm';
-import UserHome from 'components/layouts/home/UserHome';
+import UserHome from 'components/layouts/userhome/UserHome';
 import { useWindowDimensions } from 'hooks/useWindowDimensions';
 import GetUserInfo from 'features/auth/api/GetUserInfo';
 import UpdateUser from 'features/auth/api/UpdateUser';
-
-//image
-import doorOpen from 'assets/icon/door-open.png';
-import user from 'assets/icon/user.png';
-import tree from 'assets/icon/tree.png';
-import cloudShowers from 'assets/icon/cloud-showers.png';
-import sunrise from 'assets/icon/sunrise.png';
-import musicAlt from 'assets/icon/music-alt.png';
-import arrowSmallLeft from 'assets/icon/arrow-small-left.png'
+import menuIcon from 'assets/test-icon/menu-burger.png';
 
 
 
@@ -26,6 +17,7 @@ import arrowSmallLeft from 'assets/icon/arrow-small-left.png'
 function Sidebar(props) {
   const {width} = useWindowDimensions();
   const [menuActive, setMenuActive] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [menuOver, setMenuOver] = useState(true);
   const [left, setLeft] = useState(width < 500 ? -(width+3) + "px": "-438px");
   const [isLogin, setLogin] = useState(false);
@@ -104,16 +96,24 @@ function Sidebar(props) {
     width < 500 ? setLeft(-(width+3) + "px") : setLeft("-438px");;
   }
 
+  const handleIsSidebarOpen = () => {
+    setSidebarOpen(prev => !prev);
+  }
 
   return (
     <>
-      <div className='sidebar-container' style={{ left: left}} 
+      <div className="sidebar-menu-container">
+        <div className="audio-select-button" onClick={() => handleIsSidebarOpen()}>
+          <img className="audio-select-icon" src={menuIcon} alt='menu icon' />
+        </div>
+      </div>
+      <div className='sidebar-container' style={{left: isSidebarOpen ? '0px': '-435px'}} 
         onMouseOver={() => setMenuOver(true)}
         onMouseLeave={() => setMenuOver(false)}>
         <div className='sidebar-content' style={{width: width}}>
-          <div className='coooms-header-container'>
+          {/* <div className='coooms-header-container'>
             <p className='header-title'>Coooms</p>
-          </div>
+          </div> */}
           {
             isLogin ?
             <UserHome userInfo={props.userInfo} {...login_props}/>
@@ -122,16 +122,16 @@ function Sidebar(props) {
                 <LoginForm {...login_props}/>
               : <SigninForm {...login_props}/>
           }
-          <motion.img
+          {/* <motion.img
             className='back-icon'
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             src={arrowSmallLeft}
             alt='back icon'
-            onClick={() => userClick()}/>
+            onClick={() => userClick()}/> */}
           <Footer />
         </div>
-        <div className='sidebar-tab'>
+        {/* <div className='sidebar-tab'>
           <div className='coooms-icon-container'>
             <img className='coooms-icon' src={doorOpen} alt='coooms icon'/>
           </div>
@@ -177,8 +177,8 @@ function Sidebar(props) {
               </div>
             </div>
           </div>
-        </div>
-        <div className='invisible-sideber-scope' style={{ width: '100px', height: '100vh'}}/>
+        </div> */}
+        <div className='test-sideber-close-scope' style={{display: isSidebarOpen ? 'block': 'none'}} onClick={() => handleIsSidebarOpen()}/>
       </div>
 
     </>

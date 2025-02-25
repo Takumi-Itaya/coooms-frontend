@@ -1,0 +1,71 @@
+.coooms-background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+  background-color: #B7F1FC;
+}
+
+.bg-item1 {
+  width: 790px;
+  height: 368px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bg-item2 {
+  width: 867px;
+  height: 345px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.bg-item3 {
+  width: 514px;
+  height: 544px;
+  position: absolute;
+  bottom: 0;
+}
+.bg-item4 {
+  width: 626px;
+  height: 490px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.bg-item5 {
+  width: 807px;
+  height: 676px;
+  position: absolute;
+  bottom: 0;
+}
+.bg-item6 {
+  width: 813px;
+  height: 615px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.bg-cloud1 {
+  width: 220px;
+  height: 108px;
+  position: absolute;
+  top: 200px;
+}
+.bg-cloud2 {
+  width: 201px;
+  height: 111px;
+  position: absolute;
+  top: 100px;
+}
+.bg-cloud3 {
+  width: 283px;
+  height: 140px;
+  position: absolute;
+  top: 20px;
+}
+.bg-sun {
+  width: 267px;
+  height: 261px;
+  position: absolute;
+}

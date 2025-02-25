@@ -1,0 +1,12 @@
+.phonepage-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.phonepage-text {
+  color: #48A6A7;
+}

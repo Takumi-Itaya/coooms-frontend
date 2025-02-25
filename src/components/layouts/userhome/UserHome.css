@@ -1,0 +1,111 @@
+.userhome-container {
+  width: auto;
+  height: auto;
+  margin: 50px 55px;
+}
+
+.email-label {
+  height: 40px;
+  font-size: 34px;
+  color: #F2EFE7;
+}
+
+.email-text {
+  font-size: 37px;
+  color: #F2EFE7;
+}
+
+.password-text-container {
+  margin-top: 30px
+}
+
+.password-label {
+  height: 40px;
+  font-size: 34px;
+  color: #F2EFE7;
+}
+
+.password-text {
+  font-size: 37px;
+  color: #F2EFE7;
+}
+
+.totaltime-text-container {
+  margin-top: 100px;
+}
+
+.totaltime-label {
+  font-size: 54px;
+  color: #F2EFE7;
+}
+
+.totaltime-text {
+  font-size: 54px;
+  color: #F2EFE7;
+}
+
+.logout-btn-container {
+  margin-top: 50px;
+}
+
+.logout-btn {
+  width: 100%;
+  height: 53px;
+  font-size: 32px;
+  font-family: 'Lalezar';
+  color: #2973B2;
+  background-color: #F2EFE7;
+  border-radius: 5px;
+  border: none;
+}
+
+@media screen and (max-width: 500px) {
+  .userhome-container {
+    margin: 0 55px;
+    min-height: 420px;
+    overflow: scroll;
+    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    -ms-overflow-style: none;
+    /*Firefoxへの対応*/
+    scrollbar-width: none;
+  }
+   /*Google Chrome、Safariへの対応*/
+   .signin-form-container::-webkit-scrollbar{
+    display: none;
+  }
+  .email-label {
+    height: auto;
+    font-size: 20px;
+  }
+  
+  .email-text {
+    font-size: 32px;
+  }
+  
+  .password-label {
+    height: auto;
+    font-size: 20px;
+  }
+  
+  .password-text {
+    font-size: 32px;
+  }
+  
+  .totaltime-text-container {
+    margin-top: 30px;
+  }
+  
+  .totaltime-label {
+    font-size: 40px;
+    color: #2973B2;
+  }
+  
+  .totaltime-text {
+    font-size: 40px;
+    color: #2973B2;
+  }
+  
+  .logout-btn-container {
+    margin-top: 30px;
+  }
+}

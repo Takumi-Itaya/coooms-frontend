@@ -212,7 +212,7 @@ function AudioVisualizer(props) {
   }
 
 
-  //カウンター
+  //ユーザーのtotaltimeの更新
   const timerRef = useRef(new timer());
   const countStart = () => {
     timerRef.current.countStart();

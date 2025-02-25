@@ -7,7 +7,7 @@
 .login-text {
   font-size: 54px;
   text-align: center;
-  color: #C4C5D3;
+  color: #F2EFE7;
 }
 
 .error-text-container {
@@ -32,22 +32,23 @@
 
 .form-text {
   font-size: 30px;
-  color: #C4C5D3;
+  color: #F2EFE7;
 }
 .form {
   width: calc(100% - 44px);
   height: 53px;
   padding: 0 20px;
   font-size: 30px;
-  border-radius: 5px;
-  border: 4px solid #5F6368;
-  caret-color: #5F6368;
+  border-radius: 30px;
+  border: 4px solid #F2EFE7;
+  caret-color: #2973B2;
   font-family: 'Lalezar';
   color: #5F6368;
+  background-color: #F2EFE7;
 }
 .form:focus {
   outline: none;
-  border: 4px solid #6A6CF6;
+  border: 4px solid #48A6A7;
 }
 
 .other-text-container {
@@ -97,7 +98,7 @@
   font-size: 25px;
   font-family: 'Lalezar';
   text-decoration: underline;
-  color: #6A6CF6;
+  color: #F2EFE7;
 }
 .signin-link:hover {
   cursor: pointer;
@@ -106,10 +107,10 @@
 .login-button {
   width: 188px;
   height: 76px;
-  background-color: #6A6CF6;
+  background-color: #F2EFE7;
   font-size: 39px;
   font-family: 'Lalezar';
-  color: #FFFFFF;
+  color: #2973B2;
   border-radius: 5px;
   border: none;
 }

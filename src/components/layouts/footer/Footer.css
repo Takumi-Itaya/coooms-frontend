@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   height: 68px;
-  background-color: #232331;
+  background-color: #2973B2;
   margin-top: auto;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
 
 .footer-text {
   font-size: 32px;
-  color: #5F6368;
+  color: #F2EFE7;
   overflow: hidden;
 }
 
